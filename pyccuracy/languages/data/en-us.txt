@@ -51,6 +51,12 @@ page_wait_for_seconds_regex = ^(And )?I wait for (?P<timeout>\d+([.]\d+)?) secon
 page_check_contains_markup_regex = ^(And )?I see that current page contains [\"\'](?P<expected_markup>.+)[\'\"]$
 page_check_does_not_contain_markup_regex = ^(And )?I see that current page does not contain [\"\'](?P<expected_markup>.+)[\'\"]$
 
+page_confirm_regex = ^(And )?I see [\"](?P<expected_message>.+)[\"] confirm dialog$
+page_cancel_confirm_regex = ^(And )?I will cancel the next confirm dialog
+page_alert_regex = ^(And )?I see [\"](?P<expected_message>.+)[\"] alert message$
+page_confirm_failure = The confirm message (%s) does not match the expected message (%s)
+page_alert_failure = The alert message (%s) does not match the expected message (%s)
+
 checkbox_is_checked_regex = ^(And )?I see the [\"](?P<checkbox_key>.+)[\"] checkbox is checked$
 checkbox_is_not_checked_regex = ^(And )?I see the [\"](?P<checkbox_key>.+)[\"] checkbox is not checked$
 checkbox_check_regex = ^(And )?I check the [\"](?P<checkbox_key>.+)[\"] checkbox$

@@ -72,6 +72,15 @@ class SeleniumDriver(BaseDriver):
     def page_open(self, url):
         self.selenium.open(url)
 
+    def get_confirmation(self):
+        return self.selenium.get_confirmation()
+
+    def choose_cancel_on_next_confirmation(self):
+        self.selenium.choose_cancel_on_next_confirmation()
+
+    def get_alert(self):
+        return self.selenium.get_alert()
+	
     def wait_for_page(self, timeout=30000):
         self.selenium.wait_for_page_to_load(timeout)
 

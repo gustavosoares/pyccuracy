@@ -169,4 +169,13 @@ This method is called before any scenarios begin.'''
     def get_table_rows(self, table_key):
         '''This method returns a list of rows for the given table.'''
         raise NotImplementedError
+
+    def get_confirmation(self):
+        raise NotImplementedError
+
+    def choose_cancel_on_next_confirmation(self):
+        raise NotImplementedError
+
+    def get_alert(self):
+        raise NotImplementedError
         

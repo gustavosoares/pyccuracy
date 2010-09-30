@@ -235,3 +235,24 @@ This action is just a proxy to Python's time.sleep function. It just hangs for a
 
         time.sleep(timeout)
 
+class PageConfirmAction(ActionBase):
+    regex = LanguageItem("page_confirm_regex")
+
+    def execute(self, context, expected_message):
+        message = context.browser_driver.get_confirmation()
+        if message != expected_message:
+            raise self.failed(context.language.format("page_confirm_failure", message, expected_message))
+
+class PageCancelConfirmAction(ActionBase):
+    regex = LanguageItem("page_cancel_confirm_regex")
+
+    def execute(self, context, *args, **kargs):
+        context.browser_driver.choose_cancel_on_next_confirmation()
+
+class PageAlertAction(ActionBase):
+    regex = LanguageItem("page_alert_regex")
+
+    def execute(self, context, expected_message):
+        message = context.browser_driver.get_alert()
+        if message != expected_message:
+            raise self.failed(context.language.format("page_alert_failure", message, expected_message))
